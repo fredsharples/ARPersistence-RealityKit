@@ -27,7 +27,7 @@ extension CustomARView {
         guard let point = sender?.location(in: self),
               let hitTestResult = self.hitTest(
                 point,
-                types: [.existingPlaneUsingGeometry, .estimatedHorizontalPlane]
+                types: [.existingPlaneUsingGeometry, .estimatedVerticalPlane]
         ).first
         else { return }
 

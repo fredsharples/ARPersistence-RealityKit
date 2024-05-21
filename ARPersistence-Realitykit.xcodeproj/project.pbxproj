@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		66BCBB7C2BFC0D910088CD2B /* narita.png in Resources */ = {isa = PBXBuildFile; fileRef = 66BCBB7B2BFC0D910088CD2B /* narita.png */; };
 		FB2CB9B425B1EE3F0051A1AB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CB9B325B1EE3F0051A1AB /* AppDelegate.swift */; };
 		FB2CB9B625B1EE3F0051A1AB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB2CB9B525B1EE3F0051A1AB /* ContentView.swift */; };
 		FB2CB9BA25B1EE420051A1AB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB2CB9B925B1EE420051A1AB /* Assets.xcassets */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		66BCBB7B2BFC0D910088CD2B /* narita.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = narita.png; sourceTree = "<group>"; };
 		FB2CB9B025B1EE3F0051A1AB /* ARPersistence-Realitykit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ARPersistence-Realitykit.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB2CB9B325B1EE3F0051A1AB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB2CB9B525B1EE3F0051A1AB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 		FB2CB9EE25B39FBD0051A1AB /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				66BCBB7B2BFC0D910088CD2B /* narita.png */,
 				FB2CB9F625B3A8CA0051A1AB /* teapot.usdz */,
 			);
 			path = Assets;
@@ -211,6 +214,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66BCBB7C2BFC0D910088CD2B /* narita.png in Resources */,
 				FB2CB9F725B3A8CA0051A1AB /* teapot.usdz in Resources */,
 				FB2CB9BD25B1EE420051A1AB /* Preview Assets.xcassets in Resources */,
 				FB2CB9BA25B1EE420051A1AB /* Assets.xcassets in Resources */,
@@ -371,9 +375,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ARPersistence-Realitykit/Preview Content\"";
-				DEVELOPMENT_TEAM = J792L8DKQC;
+				DEVELOPMENT_TEAM = 529E2W499B;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "ARPersistence-Realitykit/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -392,9 +397,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"ARPersistence-Realitykit/Preview Content\"";
-				DEVELOPMENT_TEAM = J792L8DKQC;
+				DEVELOPMENT_TEAM = 529E2W499B;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "ARPersistence-Realitykit/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
