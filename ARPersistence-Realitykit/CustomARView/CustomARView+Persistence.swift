@@ -11,10 +11,9 @@ import RealityKit
 import ARKit
 
 extension CustomARView {
-    // MARK: - Persistence: Saving and Loading
+    // MARK: - Persistence: Saving and Loading    
     
     func loadExperience() {
-        
         /// - Tag: ReadWorldMap
         let worldMap: ARWorldMap = {
             guard let data = self.worldMapData
@@ -31,7 +30,8 @@ extension CustomARView {
         // Display the snapshot image stored in the world map to aid user in relocalizing.
         if let snapshotData = worldMap.snapshotAnchor?.imageData,
             let snapshot = UIImage(data: snapshotData) {
-            self.arState.thumbnailImage = snapshot
+            
+           // self.arState.thumbnailImage = snapshot
         } else {
             print("No snapshot image in world map")
         }

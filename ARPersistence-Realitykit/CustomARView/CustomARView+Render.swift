@@ -19,6 +19,7 @@ extension CustomARView {
         if virtualObjectAnchor == nil {
             virtualObjectAnchor = anchor
         }
+        virtualObject = AssetModel(name: "sticker")
         
         if let modelEntity = virtualObject.modelEntity {
             print("DEBUG: adding model to scene - \(virtualObject.name)")

@@ -47,32 +47,9 @@ class CustomARView: ARView {
     
     // MARK: - AR content
     var virtualObjectAnchor: ARAnchor?
-    let virtualObjectAnchorName = "virtualObject"
-   //var virtualObject = AssetModel(name: "teapot.usdz")
-    var virtualObject = AssetModel(name: "narita")
-   //var virtualObject = createModelEntity(<#T##self: CustomARView##CustomARView#>)
-    //F#
-    
-    private func createModelEntity() -> ModelEntity {
-        // Create a cube model
-        let mesh = MeshResource.generateBox(size: 0.2, cornerRadius: 0.005)
-        let material = createMaterialWithAlpha(alpha: 0.5)
-        let model = ModelEntity(mesh: mesh, materials: [material])
-        model.transform.scale.z = 0.01
-        
-        let axis = simd_float3(1.0, 0.0, 0.0)
-        let angle: Float = .pi / 2 // 90 degrees
-        let quat = simd_quatf(angle: angle, axis: axis)
-        model.transform.rotation = quat
-        
-        return model
-    }
-    private func createMaterialWithAlpha(alpha: CGFloat) -> SimpleMaterial {
-        var material = SimpleMaterial()
-        material.color = .init(tint: .white.withAlphaComponent(0.99), texture: .init(try! .load(named: "narita")))
-        return material
-    }
-    
+    var virtualObjectAnchorName = "virtualObject"
+    var virtualObject = AssetModel(name: "sticker")
+
     
     // MARK: - AR session management
     var isRelocalizingMap = false
@@ -80,7 +57,7 @@ class CustomARView: ARView {
  
     // MARK: - Persistence: Saving and Loading
     let storedData = UserDefaults.standard
-    let mapKey = "ar.worldmap"
+    let mapKey = "sticker"
 
     lazy var worldMapData: Data? = {
         storedData.data(forKey: mapKey)
@@ -90,6 +67,39 @@ class CustomARView: ARView {
         self.session.run(defaultConfiguration, options: [.resetTracking, .removeExistingAnchors])
         self.isRelocalizingMap = false
         self.virtualObjectAnchor = nil
-        storedData.removeObject(forKey: "ar.worldmap")
+    }
+    
+    func resetMemory(){
+        
+        resetTracking();
+       // let dictionary = storedData.dictionaryRepresentation()
+        printUserDefaults(forKeys: ["sticker"])
+      
+        if let bundleID = Bundle.main.bundleIdentifier {
+            UserDefaults.standard.removePersistentDomain(forName: bundleID)
+        }
+        
+        
+        
+//        dictionary.keys.forEach { key in
+//            storedData.removeObject(forKey: key)
+//        }
+//
+//        // Synchronize to make sure all data is removed immediately
+//        storedData.synchronize()
+//        _ = storedData.dictionaryRepresentation()
+        //print("After deletion: \(updatedDictionary)")
+        printUserDefaults(forKeys: ["sticker"])
+    }
+    
+    func printUserDefaults(forKeys keys: [String]) {
+        let defaults = UserDefaults.standard
+        for key in keys {
+            if let value = defaults.object(forKey: key) {
+                print("STORED KEY VALUE\(key): \(value)")
+            } else {
+                print("\(key): nil")
+            }
+        }
     }
 }

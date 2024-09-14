@@ -32,6 +32,18 @@ struct MainUI: View {
                 }
                 
                 HStack {
+                    
+                    Button(action: {
+                        print("DEBUG: reset memory")
+                        
+                        arState.resetMemoryButton.isPressed = true
+                    }) {
+                        Image(systemName: "memorychip")
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 40, height: 40)
+                    }.padding(4.0)
+                    
                     Spacer()
                     
                     Button(action: {

@@ -32,9 +32,11 @@ extension CustomARView {
         else { return }
 
         // Remove exisitng anchor and add new anchor
-        if let existingAnchor = virtualObjectAnchor {
-            self.session.remove(anchor: existingAnchor)
-        }
+       // if let existingAnchor = virtualObjectAnchor {
+            //self.session.remove(anchor: existingAnchor)
+       // }
+        virtualObjectAnchorName = UUID().uuidString
+        
         virtualObjectAnchor = ARAnchor(
             name: virtualObjectAnchorName,
             transform: hitTestResult.worldTransform

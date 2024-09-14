@@ -81,6 +81,13 @@ struct ARViewContainer: UIViewRepresentable {
                 self.arState.resetButton.isPressed = false
             }
         }
+        if arState.resetMemoryButton.isPressed {
+            uiView.resetMemory()
+            
+            DispatchQueue.main.async {
+                self.arState.resetMemoryButton.isPressed = false
+            }
+        }
     }
 
 }

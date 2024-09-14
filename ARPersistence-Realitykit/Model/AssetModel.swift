@@ -18,22 +18,14 @@ class AssetModel {
     init(name: String) {
         self.name = name
         self.modelEntity = createModelEntity()
-//        self.cancellable = ModelEntity.loadModelAsync(named: name)
-//            .sink(receiveCompletion: { completion in
-//                if case let .failure(error) = completion {
-//                    print("Unable to load a model due to error \(error)")
-//                }
-//            }, receiveValue: { modelEntity in
-//                self.modelEntity = modelEntity
-//                print("DEBUG: Successfully loaded modelEntity for modelName: \(name)")
-//            })
     }
+    
     private func createModelEntity() -> ModelEntity {
         // Create a cube model
-        let mesh = MeshResource.generateBox(size: 0.2, cornerRadius: 0.005)
+        let mesh = MeshResource.generateBox(size: 0.2, cornerRadius: 0)
         let material = createMaterialWithAlpha(alpha: 0.5)
         let model = ModelEntity(mesh: mesh, materials: [material])
-        model.transform.scale.z = 0.01
+        model.transform.scale.z = 0.001
         
         let axis = simd_float3(1.0, 0.0, 0.0)
         let angle: Float = .pi / 2 // 90 degrees
@@ -43,9 +35,17 @@ class AssetModel {
         
         return model
     }
+    
+    func getRandomImage() -> String? {
+        let stringsArray = ["narita", "udonnou","taimi","801chan","yurukyara","seacattle","bluejay","seamonster","sorajiro","salmonsushi","wapuupin"]
+        return stringsArray.randomElement()
+    }
+    
     private func createMaterialWithAlpha(alpha: CGFloat) -> SimpleMaterial {
+        let randomString = getRandomImage()
         var material = SimpleMaterial()
-        material.color = .init(tint: .white.withAlphaComponent(0.99), texture: .init(try! .load(named: "narita")))
+        material.color = .init(tint: .white.withAlphaComponent(0.99), texture: .init(try! .load(named: randomString!)))
+        
         return material
     }
 }
